@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control (Part 1)</title>
+
+    <link rel="icon" href="https://i.ibb.co/9Ztfdxp/ROBOTICS.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="dropdown-sidebar.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+
+    <!-- 3 columns -->
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://ashl3y-lin.github.io/ANS_Robotic_Home/#home"><img src="https://i.ibb.co/fChm6F5/home-icon-silhouette.png" alt=""> Home ⌄ </img></a>
+                    <ul  class="dropdown">
+                        <ul  class="dropdown">
+                            <li><a href="https://ashl3y-lin.github.io/ANS_Robotic_Home/#accordion-steps">Begin?</a></li>
+                            <li><a href="https://ashl3y-lin.github.io/ANS_Robotic_Home/#guidance-div">10_Topics</a></li>
+                            <li><a href="https://ashl3y-lin.github.io/ANS_Robotic_Home/#accordion-questions"> Questions</a></li>
+                        </ul>
+                    </ul>
+                </li>
+                
+                <li class="with-dropdown">
+                    <a href="#topic-buttons"><img src="https://i.ibb.co/8XYKTgh/reading-book-1.png" alt=""> Topics ⌄ </img></a>
+                    <ul  class="dropdown">
+                        <li><a href="https://ashl3y-lin.github.io/ANS-robotic_movement-part1/">Movement</a></li>
+                        <li><a href="https://ashl3y-lin.github.io/ANS-Robotic_motor-part1/">Motor</a></li>
+                        <li><a href="https://ashl3y-lin.github.io/ANS-robotic_display/">Display</a></li>
+                        <li><a href="https://ashl3y-lin.github.io/ANS-robotic_sound/">Sound</a></li>
+                        <li><a href="#">Control</a></li>
+                        <li><a href="#">Sensors</a></li>
+                        <li><a href="#">Event</a></li>
+                        <li><a href="#">Operator</a></li>
+                        <li><a href="#">Variable</a></li>
+                        <li><a href="#">My Block</a></li>
+
+                    </ul>
+                </li>
+               
+                <li><a href="#wro"><img src="https://i.ibb.co/Drnm7cM/competition.png" alt=""> About WRO ⌄ </img></a>
+                    <ul  class="dropdown">
+                        <li><a href="#">WRO?</a></li>
+                        <li><a href="#">ANS_journey</a></li>
+                        <li><a href="#">Tips</a></li>
+                    </ul>
+                </li>
+
+                <!-- Dropdrown of WRO: experiences. tips -->
+            </ul>
+        </nav>
+    </header>
+    
+
+    <div class="wrapper">
+        <div class="header-content" id="movement-home">
+            <h1>Control (Part 1)</h1>
+            <div>
+                <p>
+                    -> Control blocks are what tell your robot what to do and when to do it by using "Loops"
+                </p>
+                <p>-> A loop is like a magic spell that says, "Do this action again and again until I say stop!"</p>
+            </div>
+            <!-- <div class="side-side">
+                <a href="https://ibb.co/HzCpGVx"><img src="https://i.ibb.co/DCYgwt8/Pink-arrows.png" alt="Pink-arrows" height="150"></a>
+                <img src="https://i.ibb.co/QKZ28Yz/Pink-blocks.png" alt="Pink-blocks" height="150">
+            </div>
+              -->
+        </div>
+            
+            <div class="side-bar">
+                <div class="menu">
+                    <div class="item">
+                        <div class="movement-logo"><a href="#movement-home"><img src="https://i.ibb.co/rx4hDY0/logo-control.png" height="90" alt="control-logo"></a>
+                        </div>
+                        
+
+                        <a href="#movement-home"><span class="side-bar-title-1">Part 1</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="#below-header" class="sub-item"> The Loops</a></li>
+                            <li><a href="#control-wait" class="sub-item">"Wait" block</a></li>
+                            <li><a href="#control-waitUntil" class="sub-item">"Wait Until" block</a></li>
+                            <li><a href="#control-waitUntil" class="sub-item">[Start] vs [Move]</a></li>
+                            <li><a href="#control-repeat" class="sub-item">"Repeat" block</a></li>
+                            <li><a href="#control-forever" class="sub-item">"Forever" block</a></li>
+                            <li><a href="#control-repeatUntil" class="sub-item">"Repeat Until" block</a></li>
+                            <li><a href="#movement-key-takeaway" class="sub-item">Key-takeaways</a></li>
+                        </ul>
+
+                        <!-- <a href="different-page.html#section1">Section One</a> -->
+                        <a href=""><span class="side-bar-title-2">Part 2</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="#control-ifThen" class="sub-item"> "If-Then" block</a></li>
+                            <li><a href="#control-ifElse" class="sub-item">"If-Else" block</a></li>
+                            <li><a href="#control-exit" class="sub-item">"Stop and Exit" block</a></li>
+                            <li><a href="#control-key-takeaway" class="sub-item">Observation</a></li>
+                            <li><a href="#control-quiz" class="sub-item">Quiz</a></li>
+                            <li><a href="#challengeYou" class="sub-item">Challenge for You</a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+<!-- grid-container has the margin to the left-->
+<div class="grid-container-4col" id="below-header">
+
+    <!-- Introduction-->
+        <div class="grid-item">
+            <a href="#wait-control">
+                <div class="flex-grid">
+                    <div class="flex-item">
+                        <h3>"Wait" block</h3>
+                        <img src="https://i.ibb.co/WB9vRKd/1-control-wait.png" alt="1-control-wait">
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="grid-item">
+            <a href="#control-waitUntil">
+                <div class="flex-grid">
+                    <div class="flex-item">
+                        <h3>"Wait Until" block</h3>
+                    <img src="https://i.ibb.co/dLRrmj7/2-control-wait-Until.png" alt="2-control-waitUntil">
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="grid-item">
+            <a href="#control-repeat">
+                <div class="flex-grid">
+                    <div class="flex-item">
+                        <h3>"Repeat" block</h3>
+                        <img src="https://i.ibb.co/RyZR1H4/3-control-repeat.png" alt="3-control-repeat">
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="grid-item">
+            <a href="#control-forever">
+                <div class="flex-grid">
+                    <div class="flex-item">
+                        <h3>"Forever" block</h3>
+                        <img src="https://i.ibb.co/zWcNqs6/4-control-forever.png" alt="4-control-forever">
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="grid-item">
+            <a href="#control-repeatUntil">
+                <div class="flex-grid">
+                    <div class="flex-item">
+                        <h3>"Repeat Until" block</h3>
+                       <img src="https://i.ibb.co/GvkKP1z/5-control-repeat-Until.png" alt="5-control-repeat-Until">
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="grid-item">
+            <a href="#control-ifThen">
+                <div class="flex-grid">
+                    <div class="flex-item">
+                        <h3>"If-Then" block </h3>
+                        <img src="https://i.ibb.co/6vMM1g3/6-control-if-Then.png" alt="6-control-if-Then">
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="grid-item">
+            <a href="#control-ifElse">
+                <div class="flex-grid">
+                    <div class="flex-item">
+                        <h3>"If-Else" block </h3>
+                        <img src="https://i.ibb.co/6XHz8Sc/7-control-If-Else.png" alt="7-control-If-Else">
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="grid-item">
+            <a href="#control-exit">
+                <div class="flex-grid">
+                    <div class="flex-item">
+                        <h3>"Stop and Exit program" block </h3>
+                      <img src="https://i.ibb.co/bdV38SH/8-control-exit.png" alt="8-control-exit">
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+
+<!-- Closure of div.grid-container -->
+</div>
+
+
+        <hr class="line-divider">
+
+
+        <!-- The Wait section -->
+        <div class="three-columns grid-container-height" id="control-wait">
+            <div class="grid-item">
+                <h2>"Wait" Block</h2>
+                <div class="flex-item">
+                    <img src="https://i.ibb.co/WB9vRKd/1-control-wait.png" alt="1-control-wait">
+                    <p>This block it's to make the robot do nothing but wait for [how many seconds you want].</p>
+                </div>
+            </div>
+            <div class="grid-item unite">
+                <div class="flex-item">
+                    <img src="https://s9.gifyu.com/images/SZaNd.gif" alt="wait-gif">
+                    <p>1- Robot go forward for 450 degrees at the speed of 50%.</p>
+                    <p>2- Then, robot stop and do nothing for 1 second. It waits.</p>
+                    <p>3- Motor A goes up for 250 degrees at the speed of 75%.</p>
+                    
+                </div>
+                <div class="flex-item">
+                    <img src="https://i.ibb.co/94QSpxr/1-1-control-wait.png" alt="1-1-control-wait">
+                    <p>Observation: Notice that the robot takes a pause of 1 second.</p>
+                </div>
+            </div>
+        <!-- closure The div of 3-columns -->
+        </div>
+
+        
+        <hr class="line-divider">
+
+         <!-- The WAIT UNTIL section -->
+         <div class="three-columns grid-container-height" id="control-waitUntil">
+            <div class="grid-item">
+                <h2>"Wait Until" Block</h2>
+                <div class="flex-item">
+                    <img src="https://i.ibb.co/dLRrmj7/2-control-wait-Until.png" alt="2-control-waitUntil">
+                    <p>Telling your robot to stop and wait patiently until a certain condition is met.</p>
+                </div>
+            </div>
+            <div class="grid-item unite">
+                <div class="flex-item">
+                    <img src="https://s12.gifyu.com/images/SZaNl.gif" alt="Wait-Until-1">
+                    <p>1- Robot [starts moving] backward at the speed of 50%.</p>
+                    <p>2- It moves forever UNTIL the "color sensor" find red.</p>
+                    <p>3- Robot stops moving.</p>
+                    
+                </div>
+                <div class="flex-item">
+                    <img src="https://i.ibb.co/gZbNwcR/2-3-control-wait-Until.png" alt="2-3-control-wait-Until">
+                    <p>Remember that -50% for both, it's the same as saying going backward at speed of 50%</p>
+                </div>
+            </div>
+        <!-- closure The div of 3-columns -->
+        </div>
+
+<!-- grid-container has the margin to the left-->
+        <div class="grid-container">
+
+            <!-- WAIT UNTIL -->
+            <div class="grid-item pink-background" id="control-movement">
+                <div class="flex-grid">
+                    <div class="flex-item">
+                        <h2 class="h2-smaller text-middle">[Start moving] <strong>vs</strong> [Move]</h2>
+                        <img src="https://i.ibb.co/k15q45k/2-2-control-movement-start.png" alt="2-2-control-movement-start">
+                        <p class="text-middle">VS</p>
+                        <img src="https://i.ibb.co/zbzyhxC/Control-MOvement-move.png" alt="Control-MOvement-move">
+                        <p>Take a look at the difference between these 2 type of movements blocks:</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-item pink-background">
+                <div class="flex-grid">
+                    <div class="flex-item">
+                        <h2>[Start moving]</h2>
+                        <img src="https://s12.gifyu.com/images/SZaNl.gif" alt="control-start-moving">
+                        <img src="https://i.ibb.co/gZbNwcR/2-3-control-wait-Until.png" alt="2-3-control-wait-Until">
+                        <p>Notice that without a set amount of degrees, the robot only moves backward, forever, unless there's a condition.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-item pink-background">
+                <div class="flex-grid">
+                    <div class="flex-item">
+                        <h2>[Move]</h2>
+                        <img src="https://s9.gifyu.com/images/SZaNn.gif" alt="move-for">
+                        <img src="https://i.ibb.co/XDChK65/2-4-control-wait-Until.png" alt="2-4-control-wait-Until">
+                        <p>Notice that the robot doesn't listen to the code, it only moves backwards for 600 degrees.</p>
+                    </div>
+                </div>
+            </div>
+        
+        <!-- Closure of div.grid-container -->
+        </div>
+        <div class="grid-container">
+            <!-- Observation area -->
+            <div class="grid-item together no-background">
+                <div class="label">
+                    <h3>Observation</h3>
+                </div>
+                <p>
+                    <ul class="observation-list">
+                        <li>-> Recommended: use degrees.</li>
+                        <li>-> You can change how much the robot moves: using the degrees/rotations.</li>
+                        <li>-> Degrees: how much the robot moves.</li>
+                    </ul>
+                </p>
+            </div>
+
+            </div>
+    <!-- closure grid-container  -->
+        </div>
+
+        <hr class="line-divider">
+
+
+<!-- REPEAT -->
+<!-- grid-container has the margin to the left-->
+        <div class="grid-container">
+
+            <!-- REPEAT -->
+            <div class="grid-item" id="control-repeat">
+                <div class="flex-grid">
+                    <div class="flex-item">
+                        <h2>"Repeat"</h2>
+                        <img src="https://i.ibb.co/RyZR1H4/3-control-repeat.png" alt="3-control-repeat">
+                        <p>Doing It Again and Again. Make the robot do something the amount of times you want the robot to do.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="flex-grid">
+                    <div class="flex-item">
+                        <h2>Without "Repeat"</h2>
+                        <img src="https://s9.gifyu.com/images/SZDJ8.gif" alt="Speed up x4 (1)">
+                        <img src="https://i.ibb.co/M9rqBmj/3-3-control-movement-repeat.png" alt="3-3-control-movement-repeat">
+                        <p>Remember this code from Movement challenge?</p>
+                        <p>It makes the robot move in a square for 4 times</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="flex-grid">
+                    <div class="flex-item">
+                        <h2>With "Repeat"</h2>
+                        <img src="https://s9.gifyu.com/images/SZDys.gif" alt="Speed up x4">
+                       <img src="https://i.ibb.co/CHrswCB/3-2-control-repeat.png" alt="3-2-control-repeat">
+                       <p>Now look at this one.</p>
+                       <p>It looks much more simple, and easier to read.</p>
+                       <p>1- Robot moves forward for 500 degrees at speed of 50%.</p>
+                       <p>2- Make a pivot turn of 590 degrees at speed of 40%.</p>
+                       <p>3- Wait for 0.5 seconds</p>
+                       <p>Repeat this 4 times</p>
+                    </div>
+                </div>
+            </div>
+        <!-- Closure of div.grid-container -->
+        </div>
+        <!-- closure The div of 3-columns -->
+        </div>
+
+
+        <hr class="line-divider">
+
+<!-- The Forever section -->
+            <div class="three-columns grid-container-height" id="control-forever">
+            <div class="grid-item">
+                <h2>"Forever" block</h2>
+                <div class="flex-item">
+                    <img src="https://i.ibb.co/zWcNqs6/4-control-forever.png" alt="4-control-forever">
+                    <p>Forever: make something to repeat limitless times. NO stopping</p>
+                    
+                </div>
+            </div>
+            <div class="grid-item unite">
+                <div class="flex-item">
+                    <img src="https://s9.gifyu.com/images/SZaNI.gif" alt="Sensor (4)">
+                    <p>The light of the robot's navigation buttons change color from orange and green FOREVER.</p>
+                    
+                </div>
+                <div class="flex-item">
+                    <img src="https://i.ibb.co/bB9YWXk/4-1-control-forever.png" alt="4-1-control-forever">
+                    <p>Notice that the button of the "forever" block is a line. You can't add more blocks under "forever" block.</p>
+                </div>
+            </div>
+        <!-- closure The div of 3-columns -->
+        </div>
+
+        <hr class="line-divider">
+
+ <!-- The REPEAT UNTIL section -->
+        <div class="three-columns grid-container-height" id="control-repeatUntil">
+            <div class="grid-item">
+                <h2>"REPEAT UNTIL" block</h2>
+                <div class="flex-item">
+                    <img src="https://i.ibb.co/GvkKP1z/5-control-repeat-Until.png" alt="5-control-repeat-Until">
+                    <p>Is a loop that: [keeps doing something] UNTIL [a certain condition is met]</p>
+                    
+                </div>
+            </div>
+            <div class="grid-item unite">
+                <div class="flex-item">
+                   <img src="https://s9.gifyu.com/images/SZDPi.gif" alt="Sensor (2)">
+                    <p>1- Robot moves forward, without knowing how much.</p>
+                    <p>2- It moves forward UNTIL the "color sensor" read color BLUE</p>
+                    <p>3- The robot stops moving.</p>
+                    
+                </div>
+                <div class="flex-item">
+                    <img src="https://i.ibb.co/yfDr6QZ/5-1-control-repeat-Until.png" alt="5-1-control-repeat-Until">
+                    <p>You need to add a [stop moving] under the loop.</p>
+                    <p>If not, the robot will move forever, without stopping.</p>
+                </div>
+            </div>
+        <!-- closure The div of 3-columns -->
+        </div>
+
+
+
+
+<div class="grid-container">
+            <!-- Observation area -->
+            <div class="grid-item together no-background" id="movement-key-takeaway">
+                <div class="label">
+                    <h3>Key-Takeaways: why are loops important for programming?</h3>
+                </div>
+                <p>
+                    <ul class="observation-list">
+                        <li>-> <strong>Save Time and Effort</strong>: Instead of telling the robot to do the same thing a hundred times, you can use a loop of "Repeat".</li>
+                        <li>-> <strong>Get Things Done Faster</strong>: Robots are great at doing repetitive tasks quickly.
+                        </li>
+                        <li>-> <strong>Allow the robot to make decisions</strong>: depending on its surroundings.</li>
+                        <li>-><strong> Avoid Mistakes</strong>: With loops, you can make sure the robot repeats a task exactly the same way every time, reducing the chances of errors.</li>
+                        <li>-> <strong>Flexibility and Control</strong>: Loops give you control over how many times the robot repeats a task. </li>
+                    </ul>
+                </p>
+            </div>
+
+            </div>
+<!-- closure grid-container  -->
+    </div>
+
+    <!-- Buttons for next -->
+    <div class="bottom-buttons">
+        <a href="https://ashl3y-lin.github.io/ANS_Robotic_Home/"><button id="home" class="home-icon"> <img src="https://i.ibb.co/fChm6F5/home-icon-silhouette.png" alt="home-icon-silhouette" height="30"></button> </a>
+        <a href=""><button id="motors" class="next-button">Next: Control (part 2) <img src="https://i.ibb.co/0CWHhM7/icons8-arrow-full-white.png" alt="icons8-arrow-full-white" height="30" ></button></a>
+       
+    </div>
+
+
+          <!-- Footer -->
+          <div class="footer-container">
+            <div class="footerNav">
+                <ul>
+                    <li><a href="https://ashl3y-lin.github.io/ANS_Robotic_Home/#home">Home</a></li>
+                    <li><a href="https://ashl3y-lin.github.io/ANS_Robotic_Home/#topic-buttons">Topics</a></li>
+                    <li><a href="#wro">About WRO</a></li>
+                </ul>
+            </div>
+            <div class="footer-copyright">
+                <p>Copyright &copy;2024; Designed by <span class="designer">Ashley Lin </span> | Senior 2024 | American Nicaraguan School</p>
+            </div>
+        </div>
+
+
+</div>
+    
+
+    <script src="quizSection.js"></script>
+    <script src="showAnswer.js"></script>
+    <script src="scroll-smooth.js"></script>
+</body>
+</html>
